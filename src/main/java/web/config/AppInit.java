@@ -2,6 +2,20 @@ package web.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ V Создайте еще один контроллер, замаппленный на /cars.
+
+ V Создайте модель Car с тремя произвольными полями.
+
+ V Создайте список из 5 машин.
+
+ V Создайте сервис с методом, который будет возвращать указанное число машин из созданного списка.
+
+ V Создайте страницу cars.html. Реализуйте создание таблицы с машинами из сервиса с помощью thymeleaf.
+
+ V При запросе /cars выводить весь список. При запросе /cars?count=2 должен отобразиться список из 2 машин, при /cars?count=3 - из 3, и тд. При count ≥ 5 выводить весь список машин.
+ **/
+
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     // Метод, указывающий на класс конфигурации
@@ -10,7 +24,6 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
         return null;
     }
 
-
     // Добавление конфигурации, в которой инициализируем ViewResolver, для корректного отображения jsp.
     @Override
     protected Class<?>[] getServletConfigClasses() {
@@ -18,7 +31,6 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
                 WebConfig.class
         };
     }
-
 
     /* Данный метод указывает url, на котором будет базироваться приложение */
     @Override
